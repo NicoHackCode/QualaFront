@@ -1,4 +1,4 @@
-# PruebaTecnica
+# Prueba Técnica
 
 Gestión de sucursales con propósitos de prueba técnica
 
