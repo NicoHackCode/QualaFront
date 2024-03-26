@@ -64,17 +64,16 @@ export class UpdateComponent implements OnInit {
           this.notiSrv.add("Sucursal actualizada exitosamente.");
           this.router.navigateByUrl(`office/${res.idCodigo}/detail`);
         },
-        err => { this.notiSrv.add("No se pudo actualizar la oficina."); }
+        err => { this.notiSrv.add("Error interno."); }
       )
     }
     else {
-      
       this.officeSrv.remove(this.code).subscribe(
         res => {
           this.notiSrv.add("Sucursal eliminada exitosamente.");
-          this.router.navigateByUrl(`office`);
+          this.router.navigateByUrl(`home`);
         },
-        err => { this.notiSrv.add("No se pudo eliminar la oficina."); }
+        err => { this.notiSrv.add("Error interno."); }
       )
     }
   }
