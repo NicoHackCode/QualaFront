@@ -1,0 +1,25 @@
+<div class="w-screen bg-center bg-[url('/assets/images/background.webp')]">  
+
+  <div class="min-h-[100vh]">    
+
+    <div class="flex flex-col justify-center">
+
+      <ng-container *ngIf="navigationEnd">
+        <app-sidebar [navigationEnd]="navigationEnd"></app-sidebar>
+      </ng-container>
+
+      <hr class="p-0 mb-9 block md:hidden">
+
+      <router-outlet></router-outlet>
+
+      <ng-container *ngIf="isLoading | async">
+        <div loading class="fixed top-0 start-0 w-full h-full flex items-center justify-center backdrop-filter backdrop-blur-sm"></div>
+      </ng-container>
+
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+  <app-notify></app-notify>
+
+</div>

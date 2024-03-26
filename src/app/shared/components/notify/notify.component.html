@@ -1,0 +1,20 @@
+<ng-container *ngIf="data">
+
+  <div class="w-screen flex justify-center fixed bottom-4 z-50">
+    <div (mouseenter)="pauseOnHover()" (mouseleave)="resumeOnLeave()" class="w-full max-w-[315px] md:max-w-sm flex items-center justify-between gap-1 rounded-2xl p-4 bg-primary text-secondary shadow-2xl shadow-secondary hover:animate-none animate-bounce">
+      <div class="flex gap-1">
+        <!-- <mat-icon>notifications_active</mat-icon> -->
+
+        <div class="text-base">
+          {{ data.message }}
+        </div>
+      </div>
+
+      <button type="button" (click)="close()" class="p-0 m-0 transition-transform transform hover:scale-125">
+        <!-- <mat-icon>close</mat-icon> -->
+        x
+      </button>
+    </div>
+  </div>
+
+</ng-container>

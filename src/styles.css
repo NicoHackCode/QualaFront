@@ -1,0 +1,97 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+@layer base {
+  html {
+  --color-primary: #1b62a9;
+  --color-secondary: white;
+  --color-tertiary: #ff5863;
+  --color-typography: black;
+  }
+
+  /* html[data-theme="avalian"] {
+    --color-primary: #018754;
+    --color-secondary: white;
+    --color-tertiary: #ff5863;
+    --color-typography: #018754;
+  } */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* color: var(--color-primary); */
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Establece el fondo del cuerpo usando el color secundario definido en tailwind.config.js */
+body {
+  background-color: var(--color-secondary);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* https://webkit-scroll-gen.sourceforge.net/ */
+::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #3f51b5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  box-shadow: 0px 0px 0px 100000vh var(--color-secondary);
+}
+/* ===== END Scrollbar CSS ===== */
+/* You can add global styles to this file, and also import other style files */
+
+.mat-mdc-cell { z-index: 0 !important; }
+
+mat-form-field { margin-bottom: -1.39em; }
+
+.mat-mdc-header-cell { text-wrap: nowrap; }
+
+.mat-elevation-z8 { box-shadow: none !important; }
+
+tr.ex-detail-row { height: 0; }
+tr:nth-child(odd) td { border-bottom-width: 0; }
+
+.with-lines tr:nth-child(odd) td { border-bottom-width: 1px; }
+
+/* Tailwind generic classes */
+@layer components {
+  .btn {
+    @apply flex;
+    @apply gap-1;
+    @apply items-center;
+    @apply justify-center;
+
+    @apply rounded-full;
+
+    @apply hover:brightness-90;
+    @apply focus:outline-none;
+    @apply active:brightness-90;
+
+    @apply px-4;
+    @apply py-2;
+
+    @apply disabled:opacity-50
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

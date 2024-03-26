@@ -1,0 +1,5 @@
+<ng-container *ngIf="model$ | async as model">
+
+  <office-form [model]="model" [title]="'Actualizar'" (newModel)="onUpdate($event)"></office-form>
+
+</ng-container>
